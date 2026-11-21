@@ -146,10 +146,10 @@ export default function AdminLogin() {
   // }, [isRecaptchaScriptLoaded]);
 
  async function onSubmit(data: any) {
-  if (!captchaToken) {
-    setAuthError("Please complete the CAPTCHA.");
-    return;
-  }
+  // if (!captchaToken) {
+  //   setAuthError("Please complete the CAPTCHA.");
+  //   return;
+  // }
    
 
   setAuthError("");
