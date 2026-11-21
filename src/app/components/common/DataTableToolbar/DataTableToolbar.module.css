@@ -1,0 +1,34 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.searchField {
+  width: 280px;
+}
+
+.filterField {
+  width: 180px;
+}
+
+.clearButton {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+    align-items: stretch;
+  }
+
+  .searchField,
+  .filterField {
+    width: 100%;
+  }
+
+  .clearButton {
+    align-self: flex-start;
+  }
+}

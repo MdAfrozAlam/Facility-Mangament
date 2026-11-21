@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.breadcrumbs {
+  margin-bottom: 10px;
+}
+
+.breadcrumbLink {
+  font-size: 13px;
+}
+
+.currentBreadcrumb {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.title {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.titleSubtitle{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pageTitleSubheading {
+ 
+  color: #64748b;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions {
+    width: 100%;
+  }
+}

@@ -1,0 +1,17 @@
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding-top: 8px;
+}
+
+.actions {
+  padding: 16px 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}

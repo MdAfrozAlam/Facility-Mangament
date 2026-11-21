@@ -1,0 +1,47 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.separator {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.copyright {
+  margin: 0;
+  font-size: 11px;
+  color: var(--text-muted);
+}

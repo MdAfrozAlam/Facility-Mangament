@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actionsToolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gridContainer {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #475569;
+  background: #f1f5f9;
+}
+
+.statusActive {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.statusCompleted {
+  color: #003671;
+  background: #eaf4ff;
+}
+
+.statusPlanned {
+  color: #6b21a8;
+  background: #f3e8ff;
+}
+
+.statusOnHold {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+@media (max-width: 767px) {
+  .actionsToolbar {
+    display: grid;
+    gap: 12px;
+  }
+}

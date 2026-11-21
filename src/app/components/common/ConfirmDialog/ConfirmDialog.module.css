@@ -1,0 +1,108 @@
+.confirmDialog {
+  border-radius: 14px !important;
+  padding: 6px;
+}
+
+/* Title */
+
+.dialogTitle {
+  padding: 20px 22px 10px !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #1e293b;
+}
+
+/* Content */
+
+.dialogContent {
+  padding: 8px 22px 20px !important;
+}
+
+.dialogMessage {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #64748b;
+}
+
+/* Actions */
+
+.dialogActions {
+  padding: 12px 22px 20px !important;
+  gap: 10px;
+}
+
+/* Cancel */
+
+.cancelButton {
+  min-width: 90px !important;
+  height: 40px !important;
+
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+
+  background: #ffffff !important;
+  color: #475569 !important;
+
+  font-size: 14px !important;
+  font-weight: 500 !important;
+
+  text-transform: none !important;
+}
+
+.cancelButton:hover {
+  background: #f8fafc !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Confirm (colors come from the MUI theme primary palette) */
+
+.confirmButton {
+  min-width: 90px !important;
+  height: 40px !important;
+
+  border-radius: 8px !important;
+
+  font-size: 14px !important;
+  font-weight: 500 !important;
+
+  text-transform: none !important;
+
+  box-shadow: none !important;
+}
+
+.confirmButton:hover {
+  box-shadow: none !important;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .confirmDialog {
+    margin: 16px;
+    border-radius: 12px !important;
+  }
+
+  .dialogTitle {
+    padding: 18px 18px 8px !important;
+    font-size: 18px !important;
+  }
+
+  .dialogContent {
+    padding: 8px 18px 18px !important;
+  }
+
+  .dialogMessage {
+    font-size: 13px !important;
+  }
+
+  .dialogActions {
+    padding: 10px 18px 18px !important;
+  }
+
+  .cancelButton,
+  .confirmButton {
+    min-width: 80px !important;
+    height: 38px !important;
+    font-size: 13px !important;
+  }
+}
