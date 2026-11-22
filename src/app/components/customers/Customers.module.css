@@ -1,0 +1,61 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actionsToolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gridContainer {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rowActions {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 4px;
+}
+
+/* Status */
+
+.status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #475569;
+  background: #f1f5f9;
+}
+
+.statusActive {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.statusInactive {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.statusPending {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+@media (max-width: 767px) {
+  .actionsToolbar {
+    display: grid;
+    gap: 12px;
+  }
+}

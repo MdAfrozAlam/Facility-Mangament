@@ -100,56 +100,56 @@ export default function AdminLogin() {
   const captchaContainerRef = useRef<HTMLDivElement>(null);
   const captchaWidgetIdRef = useRef<number | null>(null);
 
-  // useEffect(() => {
-  //   if (
-  //     !recaptchaSiteKey ||
-  //     !isRecaptchaScriptLoaded ||
-  //     captchaWidgetIdRef.current !== null
-  //   ) {
-  //     return;
-  //   }
+  useEffect(() => {
+    if (
+      !recaptchaSiteKey ||
+      !isRecaptchaScriptLoaded ||
+      captchaWidgetIdRef.current !== null
+    ) {
+      return;
+    }
 
-  //   let attempts = 0;
-  //   let timeoutId: number | undefined;
+    let attempts = 0;
+    let timeoutId: number | undefined;
 
-  //   const renderCaptcha = () => {
-  //     const recaptcha = window.grecaptcha;
+    const renderCaptcha = () => {
+      const recaptcha = window.grecaptcha;
 
-  //     if (
-  //       !captchaContainerRef.current ||
-  //       typeof recaptcha?.render !== "function"
-  //     ) {
-  //       attempts += 1;
+      if (
+        !captchaContainerRef.current ||
+        typeof recaptcha?.render !== "function"
+      ) {
+        attempts += 1;
 
-  //       if (attempts < 100) {
-  //         timeoutId = window.setTimeout(renderCaptcha, 50);
-  //       }
+        if (attempts < 100) {
+          timeoutId = window.setTimeout(renderCaptcha, 50);
+        }
 
-  //       return;
-  //     }
+        return;
+      }
 
-  //     captchaWidgetIdRef.current = recaptcha.render(captchaContainerRef.current, {
-  //       sitekey: recaptchaSiteKey,
-  //       callback: setCaptchaToken,
-  //       "expired-callback": () => setCaptchaToken(""),
-  //       "error-callback": () => setCaptchaToken(""),
-  //     });
-  //   };
+      captchaWidgetIdRef.current = recaptcha.render(captchaContainerRef.current, {
+        sitekey: recaptchaSiteKey,
+        callback: setCaptchaToken,
+        "expired-callback": () => setCaptchaToken(""),
+        "error-callback": () => setCaptchaToken(""),
+      });
+    };
 
-  //   renderCaptcha();
+    renderCaptcha();
 
-  //   return () => {
-  //     if (timeoutId !== undefined) {
-  //       window.clearTimeout(timeoutId);
-  //     }
-  //   };
-  // }, [isRecaptchaScriptLoaded]);
+    return () => {
+      if (timeoutId !== undefined) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, [isRecaptchaScriptLoaded]);
 
  async function onSubmit(data: any) {
-  // if (!captchaToken) {
-  //   setAuthError("Please complete the CAPTCHA.");
-  //   return;
-  // }
+  if (!captchaToken) {
+    setAuthError("Please complete the CAPTCHA.");
+    return;
+  }
    
 
   setAuthError("");
@@ -275,7 +275,7 @@ export default function AdminLogin() {
                   )}
                 </div>
 
-                {/* {recaptchaSiteKey ? (
+                {recaptchaSiteKey ? (
                   <>
                     <Script
                       id="google-recaptcha"
@@ -291,12 +291,12 @@ export default function AdminLogin() {
                   <p className="login-captcha-message">
                     reCAPTCHA is not configured. Add NEXT_PUBLIC_RECAPTCHA_SITE_KEY to .env.local.
                   </p>
-                )} */}
+                )}
 
                 <button
                   type="submit"
                   className="login-btn"
-                  disabled={loading || !isValid }
+                  disabled={loading || !isValid || !captchaToken || !recaptchaSiteKey}
                   aria-busy={loading}
                 >
                   {loading ? (

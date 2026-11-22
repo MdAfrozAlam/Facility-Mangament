@@ -35,6 +35,9 @@ import {
   Package,
   Tags,
   UsersRound,
+  ShieldCheck,
+  Contact,
+  LockKeyhole,
   Wrench,
   ChevronDown,
   ChevronUp,
@@ -201,6 +204,16 @@ const menuItems: MenuItem[] = [
         ],
       },
       { title: "Organization", icon: Building2, path: "/admin/core/organization" },
+      {
+        title: "User Management",
+        icon: UsersRound,
+        path: "/admin/core/user-management",
+        children: [
+          { title: "Internal Users", icon: ShieldCheck, path: "/admin/core/user-management/internal-users" },
+          { title: "Internal Users Access Settings", icon: LockKeyhole, path: "/admin/core/user-management/internal-users-access-settings" },
+          { title: "Customers", icon: Contact, path: "/admin/core/user-management/customers" },
+        ],
+      },
     ],
   },
 ];

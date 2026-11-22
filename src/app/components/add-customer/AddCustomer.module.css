@@ -1,0 +1,407 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Tabs */
+
+.tabsWrapper {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0 8px;
+}
+
+.tabsWrapper :global(.MuiTab-root) {
+  min-height: 48px;
+  text-transform: none;
+  font-weight: 600;
+}
+
+.tabPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* display: flex above would otherwise override the hidden attribute */
+.tabPanel[hidden] {
+  display: none;
+}
+
+/* General tab: profile card on the left, form sections on the right */
+
+.generalLayout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+/* Section */
+
+.section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 18px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.sectionBody {
+  padding: 20px;
+}
+
+/* 12-column grid so rows can hold 2, 3 or 4 fields like the design */
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.span3 {
+  grid-column: span 3;
+}
+
+.span4 {
+  grid-column: span 4;
+}
+
+.span6 {
+  grid-column: span 6;
+}
+
+.subsectionTitle {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #003671;
+}
+
+/* Phone field: country code + number */
+
+.phoneField {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.dialCode {
+  flex: 0 0 100px;
+}
+
+.phoneField > :last-child {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Profile card */
+
+.profileBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 20px;
+}
+
+.avatarUpload {
+  position: relative;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.avatar {
+  width: 112px;
+  height: 112px;
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.avatarOverlay {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: #003671;
+  color: #ffffff;
+}
+
+.avatarUpload:hover .avatarOverlay {
+  background: #2f80ed;
+}
+
+.customerId {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.customerId strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.uploadError {
+  font-size: 12px;
+  color: #d32f2f;
+  text-align: center;
+}
+
+/* VIP toggle */
+
+.vipButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #64748b;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vipButton:hover {
+  border-color: #b45309;
+  color: #b45309;
+}
+
+.vipActive,
+.vipActive:hover {
+  border-color: #f59e0b;
+  background: #fef3c7;
+  color: #b45309;
+}
+
+/* Chip groups (Customer Type / Category) */
+
+.chipField {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chipField + .chipField {
+  margin-top: 18px;
+}
+
+.chipLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.required {
+  color: #d32f2f;
+}
+
+.chipGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chipGroup :global(.MuiChip-root) {
+  font-weight: 600;
+}
+
+.chipError {
+  font-size: 12px;
+  color: #d32f2f;
+}
+
+/* Property Info */
+
+.addUnitAction {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.unitCount {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.unitGrid {
+  width: 100%;
+  height: 340px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rowActions {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 4px;
+}
+
+/* Documents */
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.uploadBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 28px 20px;
+
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.uploadBox:hover,
+.uploadBoxActive {
+  border-color: #2f80ed;
+  background: #eff6ff;
+  color: #2f80ed;
+}
+
+.uploadBoxError {
+  border-color: #d32f2f;
+}
+
+.uploadTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.uploadHint {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.selectedFile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 6px 6px 6px 12px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #003671;
+  font-size: 13px;
+}
+
+.selectedFileName {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #0f172a;
+}
+
+.selectedFileSize {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.uploadBoxError + .uploadError,
+.selectedFile + .uploadError {
+  margin-top: 6px;
+}
+
+/* Placeholder tabs */
+
+.placeholder {
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* Actions */
+
+.saveAndButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+  .span3 {
+    grid-column: span 6;
+  }
+
+  .span4 {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 900px) {
+  .generalLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .span3,
+  .span4,
+  .span6 {
+    grid-column: 1 / -1;
+  }
+}
