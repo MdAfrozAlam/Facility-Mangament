@@ -146,10 +146,10 @@ export default function AdminLogin() {
   }, [isRecaptchaScriptLoaded]);
 
  async function onSubmit(data: any) {
-  if (!captchaToken) {
-    setAuthError("Please complete the CAPTCHA.");
-    return;
-  }
+  // if (!captchaToken) {
+  //   setAuthError("Please complete the CAPTCHA.");
+  //   return;
+  // }
    
 
   setAuthError("");
@@ -288,15 +288,15 @@ export default function AdminLogin() {
                     </div>
                   </>
                 ) : (
-                  <p className="login-captcha-message">
-                    reCAPTCHA is not configured. Add NEXT_PUBLIC_RECAPTCHA_SITE_KEY to .env.local.
-                  </p>
+                  // <p className="login-captcha-message">
+                  //   reCAPTCHA is not configured. Add NEXT_PUBLIC_RECAPTCHA_SITE_KEY to .env.local.
+                  // </p>
                 )}
 
                 <button
                   type="submit"
                   className="login-btn"
-                  disabled={loading || !isValid || !captchaToken || !recaptchaSiteKey}
+                  disabled={loading || !isValid}
                   aria-busy={loading}
                 >
                   {loading ? (
