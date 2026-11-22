@@ -275,7 +275,7 @@ export default function AdminLogin() {
                   )}
                 </div>
 
-                {recaptchaSiteKey ? (
+                {/* {recaptchaSiteKey ? (
                   <>
                     <Script
                       id="google-recaptcha"
@@ -288,10 +288,10 @@ export default function AdminLogin() {
                     </div>
                   </>
                 ) : (
-                  // <p className="login-captcha-message">
-                  //   reCAPTCHA is not configured. Add NEXT_PUBLIC_RECAPTCHA_SITE_KEY to .env.local.
-                  // </p>
-                )}
+                  <p className="login-captcha-message">
+                    reCAPTCHA is not configured. Add NEXT_PUBLIC_RECAPTCHA_SITE_KEY to .env.local.
+                  </p>
+                )} */}
 
                 <button
                   type="submit"
